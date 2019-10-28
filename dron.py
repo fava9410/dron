@@ -24,13 +24,13 @@ class Dron(object):
     def rotate(self, degree):
         self.degree = (self.degree + degree) % 360
         if self.degree == 0:
-            self.orientation = 'E'
+            self.orientation = 'Oriente'
         elif self.degree == 90:
-            self.orientation = 'N'
+            self.orientation = 'Norte'
         elif self.degree == 180:
-            self.orientation = 'W'
+            self.orientation = 'Occidente'
         elif self.degree == 270:
-            self.orientation = 'S'
+            self.orientation = 'Sur'
 
     def forward(self):
         if self.degree == 0:
