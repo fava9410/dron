@@ -6,13 +6,13 @@ import dron
 class TestDron(unittest.TestCase):
 
     def test_forward(self):
-        dr = dron.Dron(6, 3)
+        dr = dron.Dron(6, 10)
         dr.identify_command('A')
         self.assertEqual(dr.posX, 0)
         self.assertEqual(dr.posY, 1)
 
     def test_rotate(self):
-        dr = dron.Dron(6, 3)
+        dr = dron.Dron(6, 10)
         dr.identify_command('I')
         self.assertEqual(dr.degree, 180)
         self.assertEqual(dr.orientation, 'Occidente')
@@ -22,7 +22,7 @@ class TestDron(unittest.TestCase):
         self.assertEqual(dr.orientation, 'Oriente')
 
     def test_error_forward(self):
-        dr = dron.Dron(6, 3)
+        dr = dron.Dron(6, 10)
         cont = 0
         while cont < dr.maxPos:
             dr.forward()
@@ -33,7 +33,7 @@ class TestDron(unittest.TestCase):
     def test_enunciado(self):
         commands = 'AAAAIAAD'
         #Este si esta bien
-        dr = dron.Dron(6, 3)
+        dr = dron.Dron(6, 10)
         for command in commands:
             dr.identify_command(command)
         self.assertEqual(dr.posX, -2)
